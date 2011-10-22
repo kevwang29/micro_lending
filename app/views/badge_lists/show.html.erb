@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Luid:</b>
+  <%= @badge_list.LUID %>
+</p>
+
+<p>
+  <b>Buid:</b>
+  <%= @badge_list.BUID %>
+</p>
+
+
+<%= link_to 'Edit', edit_badge_list_path(@badge_list) %> |
+<%= link_to 'Back', badge_lists_path %>

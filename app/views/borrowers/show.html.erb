@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bid:</b>
+  <%= @borrower.BID %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @borrower.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @borrower.last_name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @borrower.category %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @borrower.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_borrower_path(@borrower) %> |
+<%= link_to 'Back', borrowers_path %>

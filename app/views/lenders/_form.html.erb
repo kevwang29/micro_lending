@@ -1,0 +1,37 @@
+<%= form_for(@lender) do |f| %>
+  <% if @lender.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lender.errors.count, "error") %> prohibited this lender from being saved:</h2>
+
+      <ul>
+      <% @lender.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %><br />
+    <%= f.number_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :class_type %><br />
+    <%= f.text_field :class_type %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.number_field :experience %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

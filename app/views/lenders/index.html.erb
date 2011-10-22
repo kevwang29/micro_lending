@@ -1,0 +1,31 @@
+<h1>Listing lenders</h1>
+
+<table>
+  <tr>
+    <th>Uid</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Class type</th>
+    <th>Experience</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lenders.each do |lender| %>
+  <tr>
+    <td><%= lender.uid %></td>
+    <td><%= lender.first_name %></td>
+    <td><%= lender.last_name %></td>
+    <td><%= lender.class_type %></td>
+    <td><%= lender.experience %></td>
+    <td><%= link_to 'Show', lender %></td>
+    <td><%= link_to 'Edit', edit_lender_path(lender) %></td>
+    <td><%= link_to 'Destroy', lender, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lender', new_lender_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  UID: 1
+  BID: 1
+  amount: 9.99
+  date: 2011-10-18 22:26:50
+
+two:
+  UID: 1
+  BID: 1
+  amount: 9.99
+  date: 2011-10-18 22:26:50

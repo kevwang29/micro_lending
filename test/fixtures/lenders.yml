@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid: 1
+  first_name: MyString
+  last_name: MyString
+  class_type: MyString
+  experience: 1
+
+two:
+  uid: 1
+  first_name: MyString
+  last_name: MyString
+  class_type: MyString
+  experience: 1

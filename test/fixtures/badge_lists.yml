@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  LUID: 1
+  BUID: 1
+
+two:
+  LUID: 1
+  BUID: 1

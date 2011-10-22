@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Uid:</b>
+  <%= @lender.uid %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @lender.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @lender.last_name %>
+</p>
+
+<p>
+  <b>Class type:</b>
+  <%= @lender.class_type %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @lender.experience %>
+</p>
+
+
+<%= link_to 'Edit', edit_lender_path(@lender) %> |
+<%= link_to 'Back', lenders_path %>
