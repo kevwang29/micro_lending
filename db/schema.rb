@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019040642) do
+ActiveRecord::Schema.define(:version => 20111101194019) do
 
   create_table "badge_lists", :force => true do |t|
-    t.integer  "LUID"
+    t.integer  "luid"
     t.integer  "BUID"
     t.datetime "created_at"
     t.datetime "updated_at"
