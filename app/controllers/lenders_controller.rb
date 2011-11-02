@@ -22,7 +22,7 @@ class LendersController < ApplicationController
   end
   
   def byUid
-    @lender = Lender.find(:all, :conditions => [ "uid = ?" , params[:uid]])
+    @lender = Lender.find(:all, :conditions => [ "luid = ?" , params[:uid]])
     
     respond_to do |format|
       format.html # show.html.erb
