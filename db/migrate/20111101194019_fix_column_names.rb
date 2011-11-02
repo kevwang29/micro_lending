@@ -8,7 +8,7 @@ class FixColumnNames < ActiveRecord::Migration
   def change
     rename_column :badge_lists, :LUID, :luid
     rename_column :badge_lists, :BUID, :bid
-    rename_column :transactions, :UID, :uid
+    rename_column :transactions, :UID, :luid
     rename_column :transactions, :BID, :buid
     rename_column :friends, :UID, :uid
     rename_column :friends, :FUID, :fuid

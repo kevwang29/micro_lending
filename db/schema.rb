@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20111101194019) do
   end
 
   create_table "transactions", :force => true do |t|
-    t.integer  "uid"
+    t.integer  "luid"
     t.integer  "buid"
     t.decimal  "amount",     :precision => 10, :scale => 0
     t.datetime "date"
