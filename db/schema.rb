@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(:version => 20111101194019) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
-    t.integer  "buid"
+    t.integer  "bid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "badges", :force => true do |t|
-    t.integer  "buid"
+    t.integer  "bid"
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20111101194019) do
   end
 
   create_table "lenders", :force => true do |t|
-    t.integer  "uid"
+    t.integer  "luid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "class_type"

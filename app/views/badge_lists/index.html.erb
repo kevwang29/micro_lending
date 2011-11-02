@@ -11,8 +11,8 @@
 
 <% @badge_lists.each do |badge_list| %>
   <tr>
-    <td><%= badge_list.LUID %></td>
-    <td><%= badge_list.BUID %></td>
+    <td><%= badge_list.luid %></td>
+    <td><%= badge_list.bid %></td>
     <td><%= link_to 'Show', badge_list %></td>
     <td><%= link_to 'Edit', edit_badge_list_path(badge_list) %></td>
     <td><%= link_to 'Destroy', badge_list, confirm: 'Are you sure?', method: :delete %></td>

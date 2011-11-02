@@ -13,8 +13,8 @@
 
 <% @transactions.each do |transaction| %>
   <tr>
-    <td><%= transaction.UID %></td>
-    <td><%= transaction.BID %></td>
+    <td><%= transaction.luid %></td>
+    <td><%= transaction.buid %></td>
     <td><%= transaction.amount %></td>
     <td><%= transaction.date %></td>
     <td><%= link_to 'Show', transaction %></td>
