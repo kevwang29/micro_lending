@@ -35,7 +35,7 @@ class BadgeListsController < ApplicationController
   def byUid
     @badge_list = BadgeList.find(:all, :conditions => [ "luid = ?" , params[:uid]])
     @badges = Array.new
-    @badge_list.each{|badge| @badges.push(Badge.find(:first, :conditions =>["buid = ?", badge[:BUID]]))}
+    @badge_list.each{|badge| @badges.push(Badge.find(:first, :conditions =>["bid = ?", badge[:BUID]]))}
   
     respond_to do |format|
       format.html # new.html.erb
