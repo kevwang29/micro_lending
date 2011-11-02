@@ -33,7 +33,7 @@ class TransactionsController < ApplicationController
   end
 
     def byUid
-    @transaction = Transaction.find(:all, :conditions => [ "uid = ?" , params[:uid]])
+    @transaction = Transaction.find(:all, :conditions => [ "luid = ?" , params[:uid]])
     @correctMapping = Array.new
     @transaction.each{|transacs| 
       x = Borrower.find(:first, :conditions =>["buid = ?", transacs[:BID]]);
