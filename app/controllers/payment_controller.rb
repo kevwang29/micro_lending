@@ -1,7 +1,9 @@
 class PaymentController < ApplicationController
+  
+  
   def payment
-    @transactions = Transaction.all
-    
+    @transactions = Transaction.find(:all, :conditions => [ "luid = ?", params[:luid]]);
+=begin    
     @transactions.each{|trans|
       borrower = Borrower.find(:first, :conditions => [ "buid = ?", trans[:buid] ])
             
@@ -9,12 +11,16 @@ class PaymentController < ApplicationController
 
       
       }
-    
+=end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @transactions }
       
     end
+  end
+  
+  def delete
+    
   end
 
 end
