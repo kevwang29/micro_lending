@@ -2,8 +2,8 @@ class BorrowersController < ApplicationController
   # GET /borrowers
   # GET /borrowers.json
   def index
-    @borrower = Borrower.all
-    @borrower.each{|b|
+    @borrowers = Borrower.all
+    @borrowers.each{|b|
       b[:current_amount] = 0;
       @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
         @tran.each{|tr|
@@ -12,7 +12,7 @@ class BorrowersController < ApplicationController
       }
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @borrower }
+      format.json { render json: @borrowers }
     end
   end
 
