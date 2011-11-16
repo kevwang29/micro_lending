@@ -21,13 +21,11 @@ class BorrowersController < ApplicationController
   def show
     @borrower = Borrower.find(params[:id])
 
-    @borrower.each{|b|
-      b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
-        @tran.each{|tr|
-          b[:current_amount]=b[:current_amount]+tr[:amount]
-        }
-      }
+    @borrower[:current_amount] = 0;
+     @tran = Transaction.find(:all, :conditions => ["buid = ?" , @borrower[:buid]]);
+      @tran.each{|tr|
+        @borrower[:current_amount]=@borrower[:current_amount]+tr[:amount]
+     }
 
     respond_to do |format|
       format.html # show.html.erb
@@ -55,13 +53,12 @@ class BorrowersController < ApplicationController
   # GET /borrowers/1/edit
   def edit
     @borrower = Borrower.find(params[:id])
-    @borrower.each{|b|
-      b[:current_amount] = 0;
-      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
-        @tran.each{|tr|
-          b[:current_amount]=b[:current_amount]+tr[:amount]
-        }
-      }
+     @borrower[:current_amount] = 0;
+     @tran = Transaction.find(:all, :conditions => ["buid = ?" , @borrower[:buid]]);
+      @tran.each{|tr|
+        @borrower[:current_amount]=@borrower[:current_amount]+tr[:amount]
+     }
+
   end
 
   # POST /borrowers
