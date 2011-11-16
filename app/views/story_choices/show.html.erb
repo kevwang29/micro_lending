@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sid:</b>
+  <%= @story_choice.sid %>
+</p>
+
+<p>
+  <b>Choices:</b>
+  <%= @story_choice.choices %>
+</p>
+
+<p>
+  <b>Mapping:</b>
+  <%= @story_choice.mapping %>
+</p>
+
+
+<%= link_to 'Edit', edit_story_choice_path(@story_choice) %> |
+<%= link_to 'Back', story_choices_path %>

@@ -1,5 +1,9 @@
 MicroLending::Application.routes.draw do
   
+
+
+  get "payment/payment"
+
   #get users by Uid
   match '/lenders/byUid', :controller => 'lenders', :action => 'byUid'
   
@@ -15,6 +19,14 @@ MicroLending::Application.routes.draw do
   #get transactions by ID
   match '/transactions/byUid', :controller =>'transactions', :action => 'byUid';
 
+  match '/stories/byId', :controller =>'stories', :action => 'byUid';
+  
+  
+  resources :story_choices
+
+  resources :stories
+  
+  
   resources :lenders
 
   resources :users

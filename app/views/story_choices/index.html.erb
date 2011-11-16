@@ -1,0 +1,27 @@
+<h1>Listing story_choices</h1>
+
+<table>
+  <tr>
+    <th>Sid</th>
+    <th>Choices</th>
+    <th>Mapping</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @story_choices.each do |story_choice| %>
+  <tr>
+    <td><%= story_choice.sid %></td>
+    <td><%= story_choice.choices %></td>
+    <td><%= story_choice.mapping %></td>
+    <td><%= link_to 'Show', story_choice %></td>
+    <td><%= link_to 'Edit', edit_story_choice_path(story_choice) %></td>
+    <td><%= link_to 'Destroy', story_choice, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Story choice', new_story_choice_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sid: 1
+  choices: MyText
+  mapping: 1
+
+two:
+  sid: 1
+  choices: MyText
+  mapping: 1
