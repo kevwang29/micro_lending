@@ -114,5 +114,21 @@ class BorrowersController < ApplicationController
     end
   end
   
+  def byBuid
+    @borrower = Borrower.find(:all, :conditions => [ "buid = ?" , params[:buid]])
+    @borrower.each{|b|
+      b[:current_amount] = 0;
+      @tran = Transaction.find(:all, :conditions => ["buid = ?" , b[:buid]]);
+        @tran.each{|tr|
+          b[:current_amount]=b[:current_amount]+tr[:amount]
+        }
+      }
+      
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @borrower }
+    end
+  end
+  
 
 end
