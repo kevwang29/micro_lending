@@ -92,10 +92,14 @@ class LendersController < ApplicationController
   def getBorrowersByUid
     @lender = Lender.find(:all, :conditions => [ "luid = ?" , params[:uid]])
     @transaction = Transaction.find(:all, :conditions =>[ "luid = ?" , params[:uid]])
+    @transaction_buid_set = Set.new;
     @borrower_list = Array.new
     @transaction.each{|transacs| 
-      @borrower_list.push(Borrower.find(:first, :conditions =>[ "buid = ?" , transacs[:buid]]))
+      @transaction_buid_set.add(transacs[:buid])
       };
+    @transaction_buid_set.each{|transacs_buid|
+        @borrower_list.push(Borrower.find(:first, :conditions =>[ "buid = ?" , transacs_buid]))
+      }  
     
     respond_to do |format|
       format.html # new.html.erb
