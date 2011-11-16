@@ -88,4 +88,18 @@ class LendersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def getBorrowersByUid
+    @lender = Lender.find(:all, :conditions => [ "luid = ?" , params[:uid]])
+    @transaction = Transaction.find(:all, :conditions =>[ "luid = ?" , params[:uid]])
+    @borrower_list = Array.new
+    @transaction.each{|transacs| 
+      @borrower_list.push(Borrower.find(:first, :conditions =>[ "buid = ?" , transacs[:buid]]))
+      };
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @borrower_list }
+    end
+  end
 end
