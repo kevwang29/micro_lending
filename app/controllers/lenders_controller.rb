@@ -96,10 +96,19 @@ class LendersController < ApplicationController
     @borrower_list = Array.new
     @transaction.each{|transacs| 
       @transaction_buid_set.add(transacs[:buid])
-      };
+     };
+     
     @transaction_buid_set.each{|transacs_buid|
-        @borrower_list.push(Borrower.find(:first, :conditions =>[ "buid = ?" , transacs_buid]))
-      }  
+      borrower = Borrower.find(:first, :conditions =>[ "buid = ?" , transacs_buid]);
+        borrower[:current_amount] = 0;
+        @tran = Transaction.find(:all, :conditions => ["buid = ?" , borrower[:buid]]);
+        if(@tran != nil)
+          @tran.each{|tr|
+            borrower[:current_amount]=borrower[:current_amount]+tr[:amount]
+          }
+        end
+        @borrower_list.push(borrower);
+      };  
     
     respond_to do |format|
       format.html # new.html.erb
