@@ -7,6 +7,7 @@
     <th>Last name</th>
     <th>Category</th>
     <th>Description</th>
+    <th>Sum</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= borrower.last_name %></td>
     <td><%= borrower.category %></td>
     <td><%= borrower.description %></td>
+    <td><%= borrower.sum %></td>
     <td><%= link_to 'Show', borrower %></td>
     <td><%= link_to 'Edit', edit_borrower_path(borrower) %></td>
     <td><%= link_to 'Destroy', borrower, confirm: 'Are you sure?', method: :delete %></td>

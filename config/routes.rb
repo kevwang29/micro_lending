@@ -2,8 +2,11 @@ MicroLending::Application.routes.draw do
   
 
 
-  get "payment/payment"
+  
 
+
+
+  
   #get users by Uid
   match '/lenders/byUid', :controller => 'lenders', :action => 'byUid'
   
@@ -21,7 +24,7 @@ MicroLending::Application.routes.draw do
 
   match '/stories/byId', :controller =>'stories', :action => 'byUid';
   match '/lenders/getBorrowersByUid', :controller =>'lenders', :action => 'getBorrowersByUid';
-  
+    
   resources :story_choices
 
   resources :stories
@@ -31,10 +34,8 @@ MicroLending::Application.routes.draw do
 
   resources :users
 
-  
-  
   resources :borrowers
-
+  
   resources :transactions
 
   resources :badges
@@ -42,6 +43,8 @@ MicroLending::Application.routes.draw do
   resources :badge_lists
 
   resources :friends
+  
+  get "payment/payment"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

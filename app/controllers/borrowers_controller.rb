@@ -31,15 +31,6 @@ class BorrowersController < ApplicationController
       format.json { render json: @borrower }
     end
   end
-  
-  def byCategory
-    @borrower = Borrower.find(:all, :conditions => [ "category = ?" , params[:category]])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @borrower }
-    end
-  end
 
   # GET /borrowers/1/edit
   def edit
@@ -89,4 +80,14 @@ class BorrowersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def byCategory
+    @borrower = Borrower.find(:all, :conditions => [ "category = ?" , params[:category]])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @borrower }
+    end
+  end
+
 end

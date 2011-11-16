@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  BID: 1
+  buid: 1
   first_name: MyString
   last_name: MyString
   category: MyString
   description: MyText
+  sum: 1
 
 two:
-  BID: 1
+  buid: 1
   first_name: MyString
   last_name: MyString
   category: MyString
   description: MyText
+  sum: 1

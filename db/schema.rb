@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116062335) do
+ActiveRecord::Schema.define(:version => 20111116065112) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(:version => 20111116062335) do
     t.string   "last_name"
     t.string   "category"
     t.text     "description"
+    t.integer  "sum"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sum"
   end
 
   create_table "friends", :force => true do |t|
