@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116065112) do
+ActiveRecord::Schema.define(:version => 20111117185707) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20111116065112) do
     t.integer  "experience"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "credit"
   end
 
   create_table "stories", :force => true do |t|
