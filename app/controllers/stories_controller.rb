@@ -81,15 +81,15 @@ class StoriesController < ApplicationController
     end
   end
   
-  def byUid
-    @story = Story.find(:all, :conditions => [ "id = ?" , params[:id]])
-    @story[0][:decisions] = StoryChoice.find(:all, :conditions => [ "sid = ?" , params[:id]])
-
+  def getStoryById
+    @story = Story.find(:first, :conditions => ["story_id = ?", params[:story_id]]);
+    @story[:decision1]= Decision.find(:first, :conditions => ["decision_id=?", @story[:decision_id_1]]);
+    @story[:decision2]= Decision.find(:first, :conditions => ["decision_id=?", @story[:decision_id_2]]);
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @story }
     end
   end
+
 end
-
-

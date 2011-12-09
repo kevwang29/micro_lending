@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117185707) do
+ActiveRecord::Schema.define(:version => 20111207203704) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20111117185707) do
     t.string   "category"
     t.text     "description"
     t.integer  "sum"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "decisions", :force => true do |t|
+    t.integer  "decision_id"
+    t.text     "description"
+    t.text     "conditions"
+    t.integer  "decision_destination"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,6 +78,9 @@ ActiveRecord::Schema.define(:version => 20111117185707) do
 
   create_table "stories", :force => true do |t|
     t.text     "description"
+    t.integer  "decision_id_1"
+    t.integer  "decision_id_2"
+    t.integer  "story_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -86,6 +98,14 @@ ActiveRecord::Schema.define(:version => 20111117185707) do
     t.integer  "buid"
     t.decimal  "amount",     :precision => 10, :scale => 0
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_decisions", :force => true do |t|
+    t.integer  "luid"
+    t.integer  "story_id"
+    t.integer  "decision_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

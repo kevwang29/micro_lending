@@ -5,6 +5,21 @@
   <%= @story.description %>
 </p>
 
+<p>
+  <b>Decision id 1:</b>
+  <%= @story.decision_id_1 %>
+</p>
+
+<p>
+  <b>Decision id 2:</b>
+  <%= @story.decision_id_2 %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @story.story_id %>
+</p>
+
 
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>

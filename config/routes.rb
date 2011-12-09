@@ -4,9 +4,13 @@ MicroLending::Application.routes.draw do
 
   
 
+  match "/user_decisions/recordDecision", :controller => "user_decisions", :action => "recordDecision";
+
+  resources :user_decisions
+
+  match '/stories/getStoryById', :controller => "stories", :action =>"getStoryById";
 
 
-  
   #get users by Uid
   match '/lenders/byUid', :controller => 'lenders', :action => 'byUid'
   
@@ -27,10 +31,11 @@ MicroLending::Application.routes.draw do
   
   match '/borrowers/byBuid', :controller =>'borrowers', :action => 'byBuid';
   
-  
-  resources :story_choices
+  resources :decisions
 
   resources :stories
+  
+  resources :story_choices
   
   
   resources :lenders

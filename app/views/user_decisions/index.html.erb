@@ -1,0 +1,27 @@
+<h1>Listing user_decisions</h1>
+
+<table>
+  <tr>
+    <th>Luid</th>
+    <th>Story</th>
+    <th>Decision</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_decisions.each do |user_decision| %>
+  <tr>
+    <td><%= user_decision.luid %></td>
+    <td><%= user_decision.story_id %></td>
+    <td><%= user_decision.decision_id %></td>
+    <td><%= link_to 'Show', user_decision %></td>
+    <td><%= link_to 'Edit', edit_user_decision_path(user_decision) %></td>
+    <td><%= link_to 'Destroy', user_decision, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User decision', new_user_decision_path %>

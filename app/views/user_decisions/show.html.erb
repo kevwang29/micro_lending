@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Luid:</b>
+  <%= @user_decision.luid %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @user_decision.story_id %>
+</p>
+
+<p>
+  <b>Decision:</b>
+  <%= @user_decision.decision_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_decision_path(@user_decision) %> |
+<%= link_to 'Back', user_decisions_path %>

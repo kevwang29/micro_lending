@@ -3,6 +3,9 @@
 <table>
   <tr>
     <th>Description</th>
+    <th>Decision id 1</th>
+    <th>Decision id 2</th>
+    <th>Story</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +14,9 @@
 <% @stories.each do |story| %>
   <tr>
     <td><%= story.description %></td>
+    <td><%= story.decision_id_1 %></td>
+    <td><%= story.decision_id_2 %></td>
+    <td><%= story.story_id %></td>
     <td><%= link_to 'Show', story %></td>
     <td><%= link_to 'Edit', edit_story_path(story) %></td>
     <td><%= link_to 'Destroy', story, confirm: 'Are you sure?', method: :delete %></td>
