@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  luid: 1
+  decision_id: 1
+  story_id: 1
+  note: MyString
+
+two:
+  luid: 1
+  decision_id: 1
+  story_id: 1
+  note: MyString

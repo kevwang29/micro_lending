@@ -1,8 +1,10 @@
 MicroLending::Application.routes.draw do
   
 
+  match "/decision_logs/getCurrentStory", :controller => "decision_logs", :action => "getCurrentStory";
+  match "/decision_logs/getAllDecisions", :controller => "decision_logs", :action => "getAllDecisions";
 
-  
+  resources :decision_logs
 
   resources :decision_objects
 

@@ -1,0 +1,29 @@
+<h1>Listing decision_logs</h1>
+
+<table>
+  <tr>
+    <th>Luid</th>
+    <th>Decision</th>
+    <th>Story</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @decision_logs.each do |decision_log| %>
+  <tr>
+    <td><%= decision_log.luid %></td>
+    <td><%= decision_log.decision_id %></td>
+    <td><%= decision_log.story_id %></td>
+    <td><%= decision_log.note %></td>
+    <td><%= link_to 'Show', decision_log %></td>
+    <td><%= link_to 'Edit', edit_decision_log_path(decision_log) %></td>
+    <td><%= link_to 'Destroy', decision_log, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Decision log', new_decision_log_path %>

@@ -15,6 +15,10 @@
   <%= @decision_object.story_object %>
 </p>
 
+<p>
+  <b>Story object:</b>
+  <%= @decision_object.to_story_id %>
+</p>
 
 <%= link_to 'Edit', edit_decision_object_path(@decision_object) %> |
 <%= link_to 'Back', decision_objects_path %>

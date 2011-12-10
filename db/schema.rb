@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111210203906) do
+ActiveRecord::Schema.define(:version => 20111210224412) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -39,12 +39,22 @@ ActiveRecord::Schema.define(:version => 20111210203906) do
     t.datetime "updated_at"
   end
 
+  create_table "decision_logs", :force => true do |t|
+    t.integer  "luid"
+    t.integer  "decision_id"
+    t.integer  "story_id"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "decision_objects", :force => true do |t|
     t.text     "description"
     t.text     "requirements"
     t.integer  "story_object_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "to_story_id"
   end
 
   add_index "decision_objects", ["story_object_id"], :name => "index_decision_objects_on_story_object_id"

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Luid:</b>
+  <%= @decision_log.luid %>
+</p>
+
+<p>
+  <b>Decision:</b>
+  <%= @decision_log.decision_id %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @decision_log.story_id %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @decision_log.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_decision_log_path(@decision_log) %> |
+<%= link_to 'Back', decision_logs_path %>
