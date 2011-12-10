@@ -4,6 +4,18 @@ MicroLending::Application.routes.draw do
 
   
 
+  resources :decision_objects
+
+  resources :story_objects do
+    resources :decision_objects
+  end
+
+  resources :decision_tests
+
+  resources :story_tests do
+    resources :decision_tests
+  end
+
   match "/user_decisions/recordDecision", :controller => "user_decisions", :action => "recordDecision";
 
   resources :user_decisions

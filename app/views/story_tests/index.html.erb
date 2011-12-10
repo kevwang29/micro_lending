@@ -1,0 +1,25 @@
+<h1>Listing story_tests</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>decision description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @story_tests.each do |story_test| %>
+  <tr>
+    <td><%= story_test.description %></td>
+    <td><%= story_test.decision_tests.first.description %></td>
+    <td><%= link_to 'Show', story_test %></td>
+    <td><%= link_to 'Edit', edit_story_test_path(story_test) %></td>
+    <td><%= link_to 'Destroy', story_test, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Story test', new_story_test_path %>

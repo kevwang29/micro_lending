@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @decision_test.description %>
+</p>
+
+<p>
+  <b>Story test:</b>
+  <%= @decision_test.story_test %>
+</p>
+
+
+<%= link_to 'Edit', edit_decision_test_path(@decision_test) %> |
+<%= link_to 'Back', decision_tests_path %>

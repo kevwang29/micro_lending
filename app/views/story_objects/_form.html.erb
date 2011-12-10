@@ -1,0 +1,41 @@
+<%= form_for(@story_object) do |f| %>
+  <% if @story_object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@story_object.errors.count, "error") %> prohibited this story_object from being saved:</h2>
+
+      <ul>
+      <% @story_object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  	<h2>Decisions </h2>
+  	<table>
+    <%= f.fields_for :decision_objects do |child_form| %>
+	
+	<tr>
+		<td><%= child_form.label :description %></td><td><%= child_form.label :requirements %></td>
+	</tr>
+    <tr>
+    	<td><%= child_form.text_area :description %></td><td><%= child_form.text_area :requirements %></td>
+    </tr>
+
+    <% unless child_form.object.new_record? %>
+      <% # Don't forget to name both of these '_destroy' in Rails 3 %>
+      <%= child_form.check_box '_destroy' %>
+      <%= child_form.label '_destroy', 'Remove' %>
+    <% end %>
+	
+  <% end %>
+  </table>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

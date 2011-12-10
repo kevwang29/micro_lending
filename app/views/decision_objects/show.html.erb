@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @decision_object.description %>
+</p>
+
+<p>
+  <b>Requirements:</b>
+  <%= @decision_object.requirements %>
+</p>
+
+<p>
+  <b>Story object:</b>
+  <%= @decision_object.story_object %>
+</p>
+
+
+<%= link_to 'Edit', edit_decision_object_path(@decision_object) %> |
+<%= link_to 'Back', decision_objects_path %>

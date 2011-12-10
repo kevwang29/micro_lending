@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207203704) do
+ActiveRecord::Schema.define(:version => 20111210203906) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -38,6 +38,25 @@ ActiveRecord::Schema.define(:version => 20111207203704) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "decision_objects", :force => true do |t|
+    t.text     "description"
+    t.text     "requirements"
+    t.integer  "story_object_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "decision_objects", ["story_object_id"], :name => "index_decision_objects_on_story_object_id"
+
+  create_table "decision_tests", :force => true do |t|
+    t.text     "description"
+    t.integer  "story_test_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "decision_tests", ["story_test_id"], :name => "index_decision_tests_on_story_test_id"
 
   create_table "decisions", :force => true do |t|
     t.integer  "decision_id"
@@ -89,6 +108,18 @@ ActiveRecord::Schema.define(:version => 20111207203704) do
     t.integer  "sid"
     t.text     "choices"
     t.integer  "mapping"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "story_objects", :force => true do |t|
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "story_tests", :force => true do |t|
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

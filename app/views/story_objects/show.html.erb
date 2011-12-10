@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @story_object.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_story_object_path(@story_object) %> |
+<%= link_to 'Back', story_objects_path %>

@@ -1,0 +1,27 @@
+<h1>Listing decision_objects</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Requirements</th>
+    <th>Story object</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @decision_objects.each do |decision_object| %>
+  <tr>
+    <td><%= decision_object.description %></td>
+    <td><%= decision_object.requirements %></td>
+    <td><%= decision_object.story_object %></td>
+    <td><%= link_to 'Show', decision_object %></td>
+    <td><%= link_to 'Edit', edit_decision_object_path(decision_object) %></td>
+    <td><%= link_to 'Destroy', decision_object, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Decision object', new_decision_object_path %>

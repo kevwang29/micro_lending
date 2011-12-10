@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyText
+  requirements: MyText
+  story_object: 
+
+two:
+  description: MyText
+  requirements: MyText
+  story_object: 

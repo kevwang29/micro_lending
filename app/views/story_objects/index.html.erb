@@ -1,0 +1,31 @@
+<h1>Listing story_objects</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Decision 1 description</th>
+    <th>Decision 1 requirements</th>
+    <th>Decision 2 description</th>
+    <th>Decision 2 requirements</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @story_objects.each do |story_object| %>
+  <tr>
+    <td><%= story_object.description %></td>
+    <td><%= story_object.decision_objects.first.description %></td>
+    <td><%= story_object.decision_objects.first.requirements %></td>
+    <td><%= story_object.decision_objects[1].description %></td>
+    <td><%= story_object.decision_objects[1].requirements %></td>
+    <td><%= link_to 'Show', story_object %></td>
+    <td><%= link_to 'Edit', edit_story_object_path(story_object) %></td>
+    <td><%= link_to 'Destroy', story_object, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Story object', new_story_object_path %>
