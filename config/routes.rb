@@ -1,5 +1,7 @@
 MicroLending::Application.routes.draw do
   
+  match "/event_logs/getEventsById", :controller => "event_logs", :action => "getEventsById";
+  resources :event_logs
 
   match "/decision_logs/getCurrentDecision", :controller => "decision_logs", :action => "getCurrentDecision";
   match "/decision_logs/getAllDecisions", :controller => "decision_logs", :action => "getAllDecisions";

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211044440) do
+ActiveRecord::Schema.define(:version => 20111211213440) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -75,6 +75,13 @@ ActiveRecord::Schema.define(:version => 20111211044440) do
     t.text     "description"
     t.text     "conditions"
     t.integer  "decision_destination"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_logs", :force => true do |t|
+    t.integer  "luid"
+    t.text     "event"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
