@@ -91,8 +91,23 @@ class DecisionLogsController < ApplicationController
   
   def getAllDecisions
     @decisions = DecisionLog.find(:all, :conditions => ["luid = ?", params[:luid]], :order => 'created_at ASC')
+    @output = Array.new;
+    
+    @decisions.each {|decision|
+      @entry=Hash.new;
+      @entry[:story] = StoryObject.find(decision[:story_id]);
+      if decision[:decision_id]==-1 
+        @entry[:decision] = nil;
+      else
+       @entry[:decision]=DecisionObject.find(decision[:decision_id]);
+      end
+      @entry[:url] = decision[:note];
+      @output.push(@entry)
+    }
+    
+    
     respond_to do |format|
-      format.json { render json: @decisions } 
+      format.json { render json: @output } 
     end 
   end
 end
