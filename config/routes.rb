@@ -14,8 +14,6 @@ MicroLending::Application.routes.draw do
     resources :decision_objects
   end
 
-  resources :decision_tests
-
   resources :story_tests do
     resources :decision_tests
   end
@@ -46,13 +44,7 @@ MicroLending::Application.routes.draw do
   match '/lenders/getBorrowersByUid', :controller =>'lenders', :action => 'getBorrowersByUid';
   
   match '/borrowers/byBuid', :controller =>'borrowers', :action => 'byBuid';
-  
-  resources :decisions
-
-  resources :stories
-  
-  resources :story_choices
-  
+      
   
   resources :lenders
 
