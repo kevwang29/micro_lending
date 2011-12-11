@@ -37,6 +37,7 @@ class StoryObjectsController < ApplicationController
   # GET /story_objects/1/edit
   def edit
     @story_object = StoryObject.find(params[:id])
+    
   end
 
   # POST /story_objects
