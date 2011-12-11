@@ -83,9 +83,9 @@ class DecisionLogsController < ApplicationController
   
   def getCurrentDecision
     @latest_decision = DecisionLog.find(:first, :conditions => ["luid = ?", params[:luid]], :order => 'created_at DESC')
-    
+    @output = Array.new.push(@latest_decision)
     respond_to do |format|
-      format.json { render json: @latest_decision }
+      format.json { render json: @output }
     end
   end
   
