@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+  	<th>Story ID</th>
     <th>Description</th>
     <th>Decision 1 description</th>
     <th>Decision 1 requirements</th>
@@ -18,6 +19,7 @@
 
 <% @story_objects.each do |story_object| %>
   <tr>
+    <td><%= story_object.id %></td>
     <td><%= story_object.description %></td>
     <td><%= story_object.decision_objects[0].description %></td>
     <td><%= story_object.decision_objects[0].requirements %></td>

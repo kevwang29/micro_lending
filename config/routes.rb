@@ -20,8 +20,6 @@ MicroLending::Application.routes.draw do
 
   match "/user_decisions/recordDecision", :controller => "user_decisions", :action => "recordDecision";
 
-  resources :user_decisions
-
   match '/stories/getStoryById', :controller => "stories", :action =>"getStoryById";
 
 
@@ -48,8 +46,6 @@ MicroLending::Application.routes.draw do
   
   resources :lenders
 
-  resources :users
-
   resources :borrowers
   
   resources :transactions
@@ -57,8 +53,6 @@ MicroLending::Application.routes.draw do
   resources :badges
 
   resources :badge_lists
-
-  resources :friends
   
   get "payment/payment"
 

@@ -98,6 +98,7 @@ class BorrowersController < ApplicationController
     end
   end
   
+  #allow retrieval of borrowers by category.
   def byCategory
     @borrower = Borrower.find(:all, :conditions => [ "category = ?" , params[:category]])
     @borrower.each{|b|
@@ -114,6 +115,7 @@ class BorrowersController < ApplicationController
     end
   end
   
+  #allow retrieval of borrowers by buid
   def byBuid
     @borrower = Borrower.find(:all, :conditions => [ "buid = ?" , params[:buid]])
     @borrower.each{|b|

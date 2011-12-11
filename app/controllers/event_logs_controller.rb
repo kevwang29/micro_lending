@@ -81,6 +81,7 @@ class EventLogsController < ApplicationController
     end
   end
   
+  #allow retrieval of all events by luid
   def getEventsById
     @event_log = EventLog.find(:all, :conditions => ["luid = ?", params[:luid]], :order =>'created_at ASC')
     

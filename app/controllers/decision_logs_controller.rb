@@ -81,6 +81,7 @@ class DecisionLogsController < ApplicationController
     end
   end
   
+  #allows retrieval of most current decision of a luid
   def getCurrentDecision
     @latest_decision = DecisionLog.find(:first, :conditions => ["luid = ?", params[:luid]], :order => 'created_at DESC')
     @output = Array.new.push(@latest_decision)
@@ -89,6 +90,7 @@ class DecisionLogsController < ApplicationController
     end
   end
   
+  #allows retrieval of all decisions made by a lender given luid
   def getAllDecisions
     @decisions = DecisionLog.find(:all, :conditions => ["luid = ?", params[:luid]], :order => 'created_at ASC')
     @output = Array.new;

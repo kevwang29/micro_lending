@@ -89,6 +89,7 @@ class LendersController < ApplicationController
     end
   end
   
+  #allow retrieval of all borrowers that a particular lender lent to
   def getBorrowersByUid
     @lender = Lender.find(:all, :conditions => [ "luid = ?" , params[:uid]])
     @transaction = Transaction.find(:all, :conditions =>[ "luid = ?" , params[:uid]])

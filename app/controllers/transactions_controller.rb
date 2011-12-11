@@ -32,20 +32,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-    def byUid
-    @transaction = Transaction.find(:all, :conditions => [ "luid = ?" , params[:uid]])
-    @correctMapping = Array.new
-    @transaction.each{|transacs| 
-      x = Borrower.find(:first, :conditions =>["buid = ?", transacs[:buid]]);
-      x[:amount] = transacs[:amount];
-      @correctMapping.push(x);
-      };
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @correctMapping }
-    end
-  end
   # GET /transactions/1/edit
   def edit
     @transaction = Transaction.find(params[:id])
@@ -92,6 +78,22 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to transactions_url }
       format.json { head :ok }
+    end
+  end
+  
+  #allow retrieval of all transactions made by a lender
+  def byUid
+    @transaction = Transaction.find(:all, :conditions => [ "luid = ?" , params[:uid]])
+    @correctMapping = Array.new
+    @transaction.each{|transacs| 
+      x = Borrower.find(:first, :conditions =>["buid = ?", transacs[:buid]]);
+      x[:amount] = transacs[:amount];
+      @correctMapping.push(x);
+      };
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @correctMapping }
     end
   end
 end
