@@ -97,7 +97,7 @@ class DecisionLogsController < ApplicationController
       @entry=Hash.new;
       @entry[:story] = StoryObject.find(decision[:story_id]);
       if decision[:decision_id]==-1 
-        @entry[:decision] = "";
+        @entry[:decision] = nil;
       else
        @entry[:decision]=DecisionObject.find(decision[:decision_id]);
       end
