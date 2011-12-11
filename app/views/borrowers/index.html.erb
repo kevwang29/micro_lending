@@ -8,6 +8,7 @@
     <th>Category</th>
     <th>Description</th>
     <th>Sum</th>
+    <th>Image url</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,6 +22,7 @@
     <td><%= borrower.category %></td>
     <td><%= borrower.description %></td>
     <td><%= borrower.sum %></td>
+    <td><%= borrower.pic_url %></td>
     <td><%= link_to 'Show', borrower %></td>
     <td><%= link_to 'Edit', edit_borrower_path(borrower) %></td>
     <td><%= link_to 'Destroy', borrower, confirm: 'Are you sure?', method: :delete %></td>
