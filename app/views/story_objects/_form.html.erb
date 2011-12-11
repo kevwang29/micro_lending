@@ -20,10 +20,10 @@
     <%= f.fields_for :decision_objects do |child_form| %>
 	
 	<tr>
-		<td><%= child_form.label :description %></td><td><%= child_form.label :requirements %></td><td><%= child_form.label :to_story_id %></td>
+		<td><%= child_form.label :description %></td><td><%= child_form.label :requirements %></td><td><%= child_form.label :hints %></td><td><%= child_form.label :to_story_id %></td>
 	</tr>
     <tr>
-    	<td><%= child_form.text_area :description %></td><td><%= child_form.text_area :requirements %></td><td><%= child_form.number_field :to_story_id %></td>
+    	<td><%= child_form.text_area :description %></td><td><%= child_form.text_area :requirements %></td><td><%= child_form.text_area :hints %></td><td><%= child_form.number_field :to_story_id %></td>
     </tr>
 
     <% unless child_form.object.new_record? %>

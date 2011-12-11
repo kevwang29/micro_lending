@@ -6,9 +6,11 @@
     <th>Decision 1 description</th>
     <th>Decision 1 requirements</th>
     <th>Decision 1 lead to story</th>
+    <th>Decision 1 hints</th>
     <th>Decision 2 description</th>
     <th>Decision 2 requirements</th>
     <th>Decision 2 lead to story</th>
+    <th>Decision 2 hints</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,9 +22,11 @@
     <td><%= story_object.decision_objects[0].description %></td>
     <td><%= story_object.decision_objects[0].requirements %></td>
     <td><%= story_object.decision_objects[0].to_story_id %></td>
+    <td><%= story_object.decision_objects[0].hints %></td>
     <td><%= story_object.decision_objects[1].description %></td>
     <td><%= story_object.decision_objects[1].requirements %></td>
     <td><%= story_object.decision_objects[1].to_story_id %></td>
+    <td><%= story_object.decision_objects[1].hints %></td>
     <td><%= link_to 'Show', story_object %></td>
     <td><%= link_to 'Edit', edit_story_object_path(story_object) %></td>
     <td><%= link_to 'Destroy', story_object, confirm: 'Are you sure?', method: :delete %></td>
