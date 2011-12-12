@@ -32,16 +32,6 @@ class BadgeListsController < ApplicationController
     end
   end
 
-  def byUid
-    @badge_list = BadgeList.find(:all, :conditions => [ "luid = ?" , params[:uid]])
-    @badges = Array.new
-    @badge_list.each{|badge| @badges.push(Badge.find(:first, :conditions =>["bid = ?", badge[:bid]]))}
-  
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @badges }
-    end
-  end
 
   # GET /badge_lists/1/edit
   def edit
@@ -91,4 +81,17 @@ class BadgeListsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  #allow retrieval of all badges held by a lender given its luid
+  def byUid
+    @badge_list = BadgeList.find(:all, :conditions => [ "luid = ?" , params[:uid]])
+    @badges = Array.new
+    @badge_list.each{|badge| @badges.push(Badge.find(:first, :conditions =>["bid = ?", badge[:bid]]))}
+  
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @badges }
+    end
+  end
+
 end

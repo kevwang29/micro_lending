@@ -21,14 +21,7 @@ class LendersController < ApplicationController
     end
   end
   
-  def byUid
-    @lender = Lender.find(:all, :conditions => [ "luid = ?" , params[:uid]])
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @lender }
-    end
-  end
+  
   # GET /lenders/new
   # GET /lenders/new.json
   def new
@@ -114,6 +107,16 @@ class LendersController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @borrower_list }
+    end
+  end
+  
+  #allow retrieval of the lender information by its luid
+  def byUid
+    @lender = Lender.find(:all, :conditions => [ "luid = ?" , params[:uid]])
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @lender }
     end
   end
 end
