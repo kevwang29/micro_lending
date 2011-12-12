@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211213440) do
+ActiveRecord::Schema.define(:version => 20111211233305) do
 
   create_table "badge_lists", :force => true do |t|
     t.integer  "luid"
@@ -61,34 +61,9 @@ ActiveRecord::Schema.define(:version => 20111211213440) do
 
   add_index "decision_objects", ["story_object_id"], :name => "index_decision_objects_on_story_object_id"
 
-  create_table "decision_tests", :force => true do |t|
-    t.text     "description"
-    t.integer  "story_test_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "decision_tests", ["story_test_id"], :name => "index_decision_tests_on_story_test_id"
-
-  create_table "decisions", :force => true do |t|
-    t.integer  "decision_id"
-    t.text     "description"
-    t.text     "conditions"
-    t.integer  "decision_destination"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "event_logs", :force => true do |t|
     t.integer  "luid"
     t.text     "event"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "friends", :force => true do |t|
-    t.integer  "uid"
-    t.integer  "fuid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -115,15 +90,6 @@ ActiveRecord::Schema.define(:version => 20111211213440) do
     t.string   "pic_url"
   end
 
-  create_table "stories", :force => true do |t|
-    t.text     "description"
-    t.integer  "decision_id_1"
-    t.integer  "decision_id_2"
-    t.integer  "story_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "story_choices", :force => true do |t|
     t.integer  "sid"
     t.text     "choices"
@@ -138,35 +104,11 @@ ActiveRecord::Schema.define(:version => 20111211213440) do
     t.datetime "updated_at"
   end
 
-  create_table "story_tests", :force => true do |t|
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "transactions", :force => true do |t|
     t.integer  "luid"
     t.integer  "buid"
     t.decimal  "amount",     :precision => 10, :scale => 0
     t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_decisions", :force => true do |t|
-    t.integer  "luid"
-    t.integer  "story_id"
-    t.integer  "decision_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", :force => true do |t|
-    t.integer  "uid"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "class"
-    t.integer  "exp"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,10 +14,10 @@ class StoryObjectsController < ApplicationController
   # GET /story_objects/1.json
   def show
     @story_object = StoryObject.find(params[:id])
-
+    @output = Array.new.push(@story_object);
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @story_object.to_json(:include => [:decision_objects]) }
+      format.json { render json: @output.to_json(:include => [:decision_objects]) }
     end
   end
 
